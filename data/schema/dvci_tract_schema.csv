@@ -1,0 +1,43 @@
+field_name	data_type	required	description	source	example_value
+geoid	string	yes	11-digit census tract GEOID (state + county + tract)	US Census Bureau	42101036100
+state_fips	string	yes	2-digit state FIPS code	US Census Bureau	42
+county_fips	string	yes	3-digit county FIPS code	US Census Bureau	101
+tract_fips	string	yes	6-digit census tract FIPS code	US Census Bureau	36100
+state_name	string	yes	State name	US Census Bureau	Pennsylvania
+county_name	string	yes	County name	US Census Bureau	Philadelphia County
+tract_name	string	yes	Census tract name	US Census Bureau	Census Tract 361
+total_population	integer	yes	Total tract population	ACS 5-Year S1810	4823
+pct_any_disability	float	yes	% population with any disability (0-100)	ACS 5-Year S1810	24.3
+pct_ambulatory_difficulty	float	yes	% population with ambulatory difficulty (0-100)	ACS 5-Year S1810	12.1
+pct_selfcare_difficulty	float	yes	% population with self-care difficulty (0-100)	ACS 5-Year S1810	6.8
+pct_independent_living_difficulty	float	yes	% population with independent living difficulty (0-100)	ACS 5-Year S1810	8.4
+pct_disability_below_poverty	float	yes	% of disability population below poverty line (0-100)	ACS 5-Year B18130	38.7
+dps_score	float	yes	Disability Prevalence Score (0-100 normalized)	Calculated	71.2
+heat_expected_annual_loss	float	yes	FEMA NRI extreme heat expected annual loss (USD)	FEMA NRI	142300
+heat_eal_normalized	float	yes	Heat EAL normalized to 0-100 within national dataset	Calculated	68.4
+flood_expected_annual_loss	float	yes	FEMA NRI riverine flood expected annual loss (USD)	FEMA NRI	89200
+flood_eal_normalized	float	yes	Flood EAL normalized to 0-100 within national dataset	Calculated	54.1
+wildfire_risk_score	float	yes	FEMA NRI wildfire risk index score (0-100)	FEMA NRI	2.1
+winter_storm_risk_score	float	yes	FEMA NRI winter storm risk index score (0-100)	FEMA NRI	41.3
+uhi_intensity	float	yes	Urban heat island intensity — mean summer LST deviation from rural baseline (°F)	EPA EnviroAtlas	6.8
+uhi_normalized	float	yes	UHI intensity normalized to 0-100 within national dataset	Calculated	73.2
+ches_score	float	yes	Climate Hazard Exposure Score (0-100 normalized)	Calculated	64.8
+pct_zero_vehicle_households	float	yes	% households with no vehicle available (0-100)	ACS 5-Year B08201	52.4
+nearest_cooling_center_km	float	yes	Distance in km from tract centroid to nearest official cooling center	Local OEM data	1.8
+nearest_cooling_center_km_normalized	float	yes	Distance normalized to 0-100 (higher = farther = more vulnerable)	Calculated	44.2
+nearest_emergency_medical_km	float	yes	Distance in km from tract centroid to nearest ER/hospital	CMS Provider Data	0.9
+nearest_emergency_medical_normalized	float	yes	Distance normalized to 0-100	Calculated	22.1
+pct_broadband_access	float	yes	% households with fixed broadband at 25/3 Mbps or faster (0-100)	FCC BDC	71.3
+broadband_access_normalized	float	yes	% without broadband normalized to 0-100 (inverted — higher = more vulnerable)	Calculated	28.7
+pct_rental_housing	float	yes	% renter-occupied housing units (0-100)	ACS 5-Year B25003	73.1
+pct_uninsured	float	yes	% population without health insurance (0-100)	ACS 5-Year S2701	11.2
+acs_score	float	yes	Adaptive Capacity Score (0-100; higher = lower capacity = more vulnerable)	Calculated	48.3
+dcvi_score	float	yes	Composite DCVI score (0-100)	Calculated	63.7
+dcvi_tier	string	yes	DCVI classification tier	Calculated	High
+dcvi_tier_code	integer	yes	Numeric tier code (1=Minimal 2=Low 3=Moderate 4=High 5=Critical)	Calculated	4
+data_vintage_acs	string	yes	ACS data vintage used	Data documentation	2022 5-Year
+data_vintage_fema_nri	string	yes	FEMA NRI release used	Data documentation	2023
+data_vintage_fcc	string	yes	FCC BDC release used	Data documentation	June 2024
+cooling_center_data_source	string	yes	Source of cooling center point data	Data documentation	OpenDataPhilly 2023
+missing_data_flags	string	no	Comma-separated list of any missing or imputed variables	Data documentation	
+notes	string	no	Any analyst notes for this tract	Analyst	High-priority tract for policy review
